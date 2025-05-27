@@ -1,0 +1,28 @@
+version: "3.10"
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    restart: on-failure:5
+  init-db:
+    build:
+      context: ./backend
+    depends_on:
+      - db
+    command: [ "python", "init_db.py" ]
+    restart: on-failure:5
+    environment:
+      DB_HOST: db
+  db:
+    image: postgres:15
+    restart: always
+    env_file:
+      - ./db/.db.env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

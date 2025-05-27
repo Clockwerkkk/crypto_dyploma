@@ -1,0 +1,11 @@
+fastapi~=0.115.12
+uvicorn
+torch
+scikit-learn
+numpy
+joblib
+ccxt
+pandas
+performer-pytorch
+lightgbm
+aiogram
