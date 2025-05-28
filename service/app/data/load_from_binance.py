@@ -2,10 +2,13 @@ import ccxt as ccxt
 from datetime import datetime
 import pandas as pd
 import time
+import os
+from dotenv import load_dotenv
+load_dotenv(dotenv_path="service//.env")
 
 binance = ccxt.binance({
-    'apiKey': BINANCE_API_KEY , # здесь нужно тянуть из env переменных
-    'secret': BINANCE_SECRET_KEY, # здесь нужно тянуть из env переменных
+    'apiKey': os.getenv(BINANCE_API_KEY), # здесь нужно тянуть из env переменных
+    'secret': os.getenv(BINANCE_SECRET_KEY), # здесь нужно тянуть из env переменных
     'enableRateLimit': True
 })
 

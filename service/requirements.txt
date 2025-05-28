@@ -1,4 +1,4 @@
-fastapi~=0.115.12
+fastapi
 uvicorn
 torch
 scikit-learn
@@ -9,3 +9,5 @@ pandas
 performer-pytorch
 lightgbm
 aiogram
+python-dotenv
+ta

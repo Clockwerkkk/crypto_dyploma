@@ -1,6 +1,6 @@
 import numpy as np
-from app.model.utils import inverse_transform
-
+from service.app.model.utils import inverse_transform
+import torch
 
 def sharpe_ratio(returns, risk_free_rate=0.0):
     excess_returns = returns - risk_free_rate
@@ -30,3 +30,4 @@ def compute_metrics_multistep(y_true_scaled, y_pred_scaled, scaler, target_featu
             'Sharpe Ratio': sr
         })
     return metrics_per_step
+

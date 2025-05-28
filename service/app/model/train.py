@@ -40,7 +40,7 @@ def train_model(model, train_loader, val_loader, epochs=50, lr=1e-3, device='cud
         if avg_val_loss < best_val_loss:
             best_val_loss = avg_val_loss
             trigger_times = 0
-            torch.save(model.state_dict(), 'models/best_hybrid_model.pth')
+            torch.save(model.state_dict(), 'service/app/models/best_hybrid_model.pth')
         else:
             trigger_times += 1
             if trigger_times >= patience:
