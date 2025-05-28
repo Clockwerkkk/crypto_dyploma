@@ -8,7 +8,7 @@ import torch
 from sklearn.preprocessing import StandardScaler
 from app.model.model import HybridPerformerBiLSTM
 from app.model.utils import add_technical_indicators
-API_TOKEN = "8159072368:AAHN6sckoTYLXoh74yDbpgdUR-Pw2dFSwz0"
+API_TOKEN = "MY_SECRET_KEY"
 API_URL = "http://localhost:8000/predict"
 
 bot = Bot(token=API_TOKEN)
